@@ -1,24 +1,26 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-propinas = sns.load_dataset("tips")
-print(propinas)
+pinguinos = sns.load_dataset("penguins")
+print(pinguinos.head())
+sns.displot(data=pinguinos,
+            x="body_mass_g",
+            kde=True)
 
-sns.relplot(data=propinas,
-            x="total_bill",
-            y="tip", 
-            hue="smoker",
-            style="smoker",
-            size="size")
+sns.displot(data=pinguinos,
+            x="body_mass_g",
+            kde=True,
+            col="island")
 plt.show()
 
-
-sns.relplot(data=propinas,
-            x="total_bill",
-            y="tip", 
-            hue="smoker",
-            style="smoker",
-            size="size",
-            col="time",
-            legend=None)
+sns.displot(data=pinguinos,
+            x="flipper_length_mm",
+            kind="kde",
+            rug=True)
 plt.show()
+
+sns.displot(data=pinguinos, 
+            x="flipper_length_mm",
+            kind="ecdf",) # Dato de distribución acumulativa empirica, nos muestra la proporción de observaciones que caen por debajop de cada valor
+plt.show()
+

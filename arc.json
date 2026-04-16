@@ -1,14 +1,8 @@
-     total_bill   tip     sex smoker   day    time  size
-0         16.99  1.01  Female     No   Sun  Dinner     2
-1         10.34  1.66    Male     No   Sun  Dinner     3
-2         21.01  3.50    Male     No   Sun  Dinner     3
-3         23.68  3.31    Male     No   Sun  Dinner     2
-4         24.59  3.61  Female     No   Sun  Dinner     4
-..          ...   ...     ...    ...   ...     ...   ...
-239       29.03  5.92    Male     No   Sat  Dinner     3
-240       27.18  2.00  Female    Yes   Sat  Dinner     2
-241       22.67  2.00    Male    Yes   Sat  Dinner     2
-242       17.82  1.75    Male     No   Sat  Dinner     2
-243       18.78  3.00  Female     No  Thur  Dinner     2
+  species     island  bill_length_mm  ...  flipper_length_mm  body_mass_g     sex
+0  Adelie  Torgersen            39.1  ...              181.0       3750.0    Male
+1  Adelie  Torgersen            39.5  ...              186.0       3800.0  Female
+2  Adelie  Torgersen            40.3  ...              195.0       3250.0  Female
+3  Adelie  Torgersen             NaN  ...                NaN          NaN     NaN
+4  Adelie  Torgersen            36.7  ...              193.0       3450.0  Female
 
-[244 rows x 7 columns]
+[5 rows x 7 columns]

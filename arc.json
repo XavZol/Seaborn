@@ -1,8 +1,0 @@
-  species     island  bill_length_mm  ...  flipper_length_mm  body_mass_g     sex
-0  Adelie  Torgersen            39.1  ...              181.0       3750.0    Male
-1  Adelie  Torgersen            39.5  ...              186.0       3800.0  Female
-2  Adelie  Torgersen            40.3  ...              195.0       3250.0  Female
-3  Adelie  Torgersen             NaN  ...                NaN          NaN     NaN
-4  Adelie  Torgersen            36.7  ...              193.0       3450.0  Female
-
-[5 rows x 7 columns]

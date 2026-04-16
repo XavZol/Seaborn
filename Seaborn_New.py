@@ -1,26 +1,47 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-pinguinos = sns.load_dataset("penguins")
-print(pinguinos.head())
-sns.displot(data=pinguinos,
-            x="body_mass_g",
-            kde=True)
+propinas = sns.load_dataset("tips")
 
-sns.displot(data=pinguinos,
-            x="body_mass_g",
-            kde=True,
-            col="island")
+sns.catplot(data=propinas,
+            kind="strip",
+            x="day",
+            y="total_bill",
+            hue="smoker");
 plt.show()
 
-sns.displot(data=pinguinos,
-            x="flipper_length_mm",
-            kind="kde",
-            rug=True)
+sns.catplot(data=propinas,
+            kind="swarm", # evita el solapamiento
+            x="day",
+            y="total_bill",
+            hue="smoker");
 plt.show()
 
-sns.displot(data=pinguinos, 
-            x="flipper_length_mm",
-            kind="ecdf",) # Dato de distribución acumulativa empirica, nos muestra la proporción de observaciones que caen por debajop de cada valor
+sns.catplot(data=propinas,
+            kind="box", # diagrama de caja y bigotes
+            x="day",
+            y="total_bill",
+            hue="smoker");
+plt.show()
+
+sns.catplot(data=propinas,
+            kind="violin", 
+            x="day",
+            y="total_bill",
+            hue="smoker");
+plt.show()
+
+sns.catplot(data=propinas,
+            kind="point", 
+            x="day",
+            y="total_bill",
+            hue="smoker");
+plt.show()
+
+sns.catplot(data=propinas,
+            kind="bar", 
+            x="day",
+            y="total_bill",
+            hue="smoker");
 plt.show()
 

@@ -2,20 +2,41 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 pinguinos = sns.load_dataset("penguins")
-g = sns.PairGrid(pinguinos,
-                    hue="species",
-                    corner=True)
-g.map_lower(sns.kdeplot,
-            hue=None,
-            level=5,
-            color=".2")
-g.map_lower(sns.scatterplot,
-            marker="+")
-g.map_diag(sns.histplot, 
-            element="step",
-            linewidth=0,
-            kde=True)
-g.add_legend(frameon=True)
-g.legend.set_bbox_to_anchor((.61, .6))
+
+sns.set_theme(style="dark")
+
+sns.relplot(data=pinguinos,
+            x="bill_length_mm",
+            y="bill_depth_mm",
+            hue="body_mass_g",
+            palette="crest",
+            marker="x",
+            s=100)
 plt.show()
 
+g = sns.relplot(data=pinguinos,
+            x="bill_length_mm",
+            y="bill_depth_mm",
+            hue="body_mass_g",
+            palette="crest",
+            marker="x",
+            s=100)
+g.set_axis_labels("Largo del Pico (mm)",
+                "Grosor del Pico (mm)",
+                labelpad=10)
+plt.show()
+
+g = sns.relplot(data=pinguinos,
+            x="bill_length_mm",
+            y="bill_depth_mm",
+            hue="body_mass_g",
+            palette="crest",
+            marker="x",
+            s=100)
+g.set_axis_labels("Largo del Pico (mm)",
+                    "Grosor del Pico (mm)",
+                    labelpad=10)
+g.legend.set_title("Masa\nCorporal (g)")
+g.figure.set_size_inches(6.5, 4.5)
+g.ax.margins(.15);
+plt.show()

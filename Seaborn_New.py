@@ -1,42 +1,38 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+
 pinguinos = sns.load_dataset("penguins")
 
-sns.set_theme(style="dark")
+sns.displot(data=pinguinos,
+            x="flipper_length_mm",
+            hue="species",
+            multiple="stack")
+plt.show()
+
+sns.histplot(data=pinguinos,
+            x="flipper_length_mm",
+            hue="species",
+            multiple="stack")
+plt.show()
+
+sns.displot(data=pinguinos,
+            x="flipper_length_mm",
+            hue="species",
+            multiple="stack",
+            col="species");
+plt.show()
 
 sns.relplot(data=pinguinos,
-            x="bill_length_mm",
-            y="bill_depth_mm",
-            hue="body_mass_g",
-            palette="crest",
-            marker="x",
-            s=100)
+            x="flipper_length_mm",
+            y="bill_length_mm",
+            col="sex")
 plt.show()
 
-g = sns.relplot(data=pinguinos,
-            x="bill_length_mm",
-            y="bill_depth_mm",
-            hue="body_mass_g",
-            palette="crest",
-            marker="x",
-            s=100)
-g.set_axis_labels("Largo del Pico (mm)",
-                "Grosor del Pico (mm)",
-                labelpad=10)
+graf = sns.relplot(data=pinguinos,
+            x="flipper_length_mm",
+            y="bill_length_mm",
+            col="sex")
+graf.set_axis_labels("Largo Aletas (mm)")
 plt.show()
 
-g = sns.relplot(data=pinguinos,
-            x="bill_length_mm",
-            y="bill_depth_mm",
-            hue="body_mass_g",
-            palette="crest",
-            marker="x",
-            s=100)
-g.set_axis_labels("Largo del Pico (mm)",
-                    "Grosor del Pico (mm)",
-                    labelpad=10)
-g.legend.set_title("Masa\nCorporal (g)")
-g.figure.set_size_inches(6.5, 4.5)
-g.ax.margins(.15);
-plt.show()
